@@ -1,0 +1,14 @@
+extends ../layout
+
+   
+block content
+  h1 Word list
+  a(class='button' href='/word/create') Create
+  p.lead A boilerplate for Node.js web applications.
+  hr
+  .row
+    each word in words
+      div
+        h5 orignal: #{word.orignaltext} 
+        h5 translation: #{word.translation}
+        

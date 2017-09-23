@@ -34,6 +34,7 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const wordController = require('./controllers/word');
 
 /**
  * API keys and Passport configuration.
@@ -136,6 +137,10 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
+
+app.get('/word', wordController.getIndex);
+app.get('/word/create', wordController.getCreate);
+app.post('/word/create', wordController.postCreate);
 /**
  * API examples routes.
  */
